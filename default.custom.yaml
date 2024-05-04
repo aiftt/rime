@@ -4,3 +4,6 @@ patch:
       - accept: Control+space
         toggle: ascii_mode
         when: always
+      # = / - 翻页 
+      - { when: has_menu, accept: equal, send: Page_Down } # = 向下翻页
+      - { when: has_menu, accept: minus, send: Page_Up } # - 向上翻页
