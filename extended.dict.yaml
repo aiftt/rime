@@ -27,4 +27,8 @@ import_tables:
 
   # emoji 中的词库
   - dicts/emoji
+
+  # my
+  - dicts/zcheng
+  - dicts/zcheng_sogou
 ...
