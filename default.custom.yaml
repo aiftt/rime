@@ -1,0 +1,6 @@
+patch:
+  key_binder:
+    bindings:
+      - accept: Control+space
+        toggle: ascii_mode
+        when: always
