@@ -21,8 +21,8 @@ show_notifications_time: 1200
 global_ascii: false
 
 style:
-  color_scheme: win11_weasel # 主题方案
-  color_scheme_dark: win11_weasel_dark # 暗色模式下的主题方案
+  color_scheme: zcheng # 主题方案
+  color_scheme_dark: zcheng # 暗色模式下的主题方案
 
   # 这里提供三种不同主题预设，自行切换注释即可
   # 必须启用其中一种预设！
