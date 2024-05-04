@@ -1,0 +1,11 @@
+# Rime dictionary
+# encoding: utf-8
+
+---
+name: zcheng
+version: "2023-07-27"
+import_tables:
+  # 建议把扩展词库放到下面，有重复词条时，最上面的权重生效
+  # - cn_dicts/mydict
+...
+浙江综合交通大数据中心有限公司	ztd
