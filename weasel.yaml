@@ -4,7 +4,7 @@
 #
 # COMMIT SHA: 7016a340fdc06b291ed8ca074924eea8c07679b8
 
-config_version: "2024-04-26"
+config_version: '2024-04-26'
 
 app_options:
   cmd.exe:
@@ -29,7 +29,7 @@ style:
 
   # Windows 11 风格预设
   # 感谢 luminosara https://github.com/LufsX/rime/pull/22、https://github.com/LufsX/rime/pull/26
-  __include: "win11_preset"
+  __include: 'win11_preset'
 
   # Windows 10 MDL2 风格预设
   # 此项风格建议使用 win10_MDL 为前缀的主题方案
@@ -62,7 +62,7 @@ style:
   font_point: 14 # 主要字体大小
   label_font_point: 14 # 标签字体大小
   comment_font_point: 14 # 注释字体大小
-  mark_text: "" # 高亮标记字符，显示在选中的候选标签前
+  mark_text: '' # 高亮标记字符，显示在选中的候选标签前
 
   vertical_auto_reverse: false # 垂直排列时自动反转顺序
   vertical_text: false # 垂直文本显示
@@ -73,9 +73,36 @@ style:
   layout/linespacing: 0 # 行高百分比，0 即为禁用，该项大于 100 可解决因字体导致的候选栏高度闪烁问题（需要同时设置基线高度 baseline）
 
 preset_color_schemes:
+  zcheng:
+    author: '凝渊<gccll.love@gmail.com'
+    back_color: 0x000000 # 候选条背景色，24位色值，16进制，BGR顺序
+    border_color: 0x5C21FF # 边框色
+    text_color: 0xCCAA88 # 拼音行文字颜色
+    hilited_back_color: 0x8440DD # 第一候选项背景背景色
+    hilited_candidate_text_color: 0xFFFFFF # 第一候选项文字颜色
+    hilited_candidate_back_color: 0xFF0D2D # 第一候选项背景颜色
+    hilited_candidate_label_color: 0x30BB55 # 第一候选项编号颜色
+    hilited_comment_text_color: 0x999999 # 注解文字高亮
+    hilited_text_color: 0xFECB96 # 高亮拼音 (需要开启内嵌编码)
+    candidate_text_color: 0x30BB55 # 预选项文字颜色
+    comment_text_color: 0x3EDDC8 # 拼音等提示文字颜色
+    horizontal: false # 水平排列
+    inline_preedit: true # 单行显示，false双行显示
+    label_color: 0x30BB55 # 预选栏编号颜色
+    # candidate_label_color: 0x999999 # 候选编号颜色
+    candidate_format: "%c\u2005%@" # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
+    font_face: 'PingFangSC' # 候选词编号字体
+    font_point: 16 # 候选文字大小
+    label_font_point: 13 # 候选编号大小
+    corner_radius: 5 # 候选条圆角
+    hilited_corner_radius: 5 # 高亮圆角
+    border_height: 4 # 窗口上下高度
+    border_width: 4 # 窗口左右宽度
+    border_color_width: 0 # 输入条边框宽度
+
   ayaya:
-    name: "文文／Ayaya"
-    author: "Lufs X <i@isteed.cc>"
+    name: '文文／Ayaya'
+    author: 'Lufs X <i@isteed.cc>'
 
     back_color: 0xF9F9F9
     border_color: 0xE7E7E7
@@ -90,8 +117,8 @@ preset_color_schemes:
     text_color: 0x8100EB
 
   ayaya_dark:
-    name: "文文／Ayaya／深色"
-    author: "Lufs X <i@isteed.cc>"
+    name: '文文／Ayaya／深色'
+    author: 'Lufs X <i@isteed.cc>'
 
     back_color: 0x000000
     border_color: 0x000000
@@ -128,7 +155,7 @@ preset_color_schemes:
     label_color: 0x888888
 
   macos_light:
-    author: "一方<liuour@gmail.com>"
+    author: '一方<liuour@gmail.com>'
     back_color: 0xFFFFFF
     border_color: 0xFFFFFF
     text_color: 0x424242
@@ -142,7 +169,7 @@ preset_color_schemes:
     label_color: 0x999999
 
   macos_dark:
-    author: "一方<liuour@gmail.com>"
+    author: '一方<liuour@gmail.com>'
     back_color: 0x252a2e
     border_color: 0x050505
     text_color: 0x424242
@@ -156,8 +183,8 @@ preset_color_schemes:
     label_color: 0x999999
 
   macos12_light:
-    name: "高仿亮色 macOS"
-    author: "Lufs X <i@isteed.cc>"
+    name: '高仿亮色 macOS'
+    author: 'Lufs X <i@isteed.cc>'
 
     back_color: 0xFFFFFF
     border_color: 0xFFFFFF
@@ -172,8 +199,8 @@ preset_color_schemes:
     hilited_text_color: 0xD8000000
 
   macos12_dark:
-    name: "高仿暗色 macOS"
-    author: "Lufs X <i@isteed.cc>"
+    name: '高仿暗色 macOS'
+    author: 'Lufs X <i@isteed.cc>'
 
     back_color: 0x1E1F24
     border_color: 0x1E1F24
@@ -188,7 +215,7 @@ preset_color_schemes:
     hilited_text_color: 0xD8000000
 
   win10_weasel:
-    author: "luminosa"
+    author: 'luminosa'
     back_color: 0xF3F3F3 # 背景颜色 颜色均取色自 Windows 10 默认
     border_color: 0xDBDCDC # 边框颜色
     candidate_text_color: 0x000000 # 候选文字颜色
@@ -200,8 +227,8 @@ preset_color_schemes:
     text_color: 0x000000 # 拼音文字颜色
 
   win11_weasel:
-    name: "Windows 11 默认"
-    author: "luminosa"
+    name: 'Windows 11 默认'
+    author: 'luminosa'
     back_color: 0xF9F9F9 # 背景颜色 颜色均取色自 Windows 11 默认
     border_color: 0xE7E7E7 # 边框颜色
     candidate_text_color: 0x000000 # 候选文字颜色
@@ -213,8 +240,8 @@ preset_color_schemes:
     text_color: 0x000000 # 拼音文字颜色
 
   win11_weasel_dark:
-    name: "Windows 11 默认／深色"
-    author: "Lufs X <i@isteed.cc>"
+    name: 'Windows 11 默认／深色'
+    author: 'Lufs X <i@isteed.cc>'
     back_color: 0x2C2C2C # 背景颜色 颜色均取色自 Windows 11 默认
     border_color: 0x333333 # 边框颜色
     candidate_text_color: 0xFFFFFF # 候选文字颜色
@@ -226,8 +253,8 @@ preset_color_schemes:
     text_color: 0xFFFFFF # 拼音文字颜色
 
   win10_MDL_ayaya:
-    name: "Windows10 文文／Ayaya"
-    author: "Lufs X <i@isteed.cc>"
+    name: 'Windows10 文文／Ayaya'
+    author: 'Lufs X <i@isteed.cc>'
 
     back_color: 0xFFFFFF
     candidate_text_color: 0x121212
@@ -239,8 +266,8 @@ preset_color_schemes:
     text_color: 0x8100EB
 
   win10_MDL_ayaya_dark:
-    name: "Windows10 文文／Ayaya／深色"
-    author: "Lufs X <i@isteed.cc>"
+    name: 'Windows10 文文／Ayaya／深色'
+    author: 'Lufs X <i@isteed.cc>'
 
     back_color: 0x000000
     candidate_text_color: 0xD2D2D2
@@ -252,7 +279,7 @@ preset_color_schemes:
     text_color: 0x8100EB
 
   win10_MDL_deepgrey:
-    name: "Windows10 Deepgrey"
+    name: 'Windows10 Deepgrey'
     author: fbewivpjsbsby
 
     text_color: 0x000000
@@ -268,7 +295,7 @@ preset_color_schemes:
     hilited_comment_text_color: 0xffffff
 
   win10_MDL_blue:
-    name: "Windows 10 Blue"
+    name: 'Windows 10 Blue'
     author: fbewivpjsbsby
     candidate_text_color: 0x000000
     comment_text_color: 0x888888
@@ -284,7 +311,7 @@ preset_color_schemes:
     label_color: 0x888888
 
   win10_MDL_darkblue:
-    name: "Windows 10 Dark Blue"
+    name: 'Windows 10 Dark Blue'
     author: fbewivpjsbsby
     candidate_text_color: 0xf2f2f2
     comment_text_color: 0x888888
@@ -324,7 +351,7 @@ win11_preset:
     shadow_radius: 13 # 阴影半径
 
 win10_preset:
-  label_format: "%s" # 候选栏标签格式
+  label_format: '%s' # 候选栏标签格式
   layout:
     align_type: center # 布局对齐方式
     max_width: 0 # 最大宽度限制
@@ -348,7 +375,7 @@ win10_preset:
     shadow_radius: 10 # 阴影半径
 
 win10_MDL_preset:
-  label_format: "%s"
+  label_format: '%s'
   font_point: 13
   label_font_point: 9
   layout:
