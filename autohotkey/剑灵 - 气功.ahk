@@ -1,42 +1,36 @@
-; #SingleInstance Force
-#Include "common.ahk"
+#SingleInstance Force
+#Include common.ahk
 
 ; 左键
 XButton2::
-{
-    Loop 
+    Loop
     {
         ; 左右攒并炎玉
-        color := PixelGetColor(975, 1001)
-        ; ToolTip color "fuck you"
-        ; 莲花指
-        if (color == 0xBA4724) {
-            ; ToolTip "fuck you yyyy" color
-            Send "{c}"
-        }
-        Sleep 50
-        MouseClick "left" 
-        Sleep 50
-        MouseClick "right" 
-        ; 亮了就按
-        color := PixelGetColor(936, 940)
-        if (color != 0X74747) {
-            tooltip "fuck yes" color
-            Send "{2}"
+        Send, {LButton}{f}
+        ;; 爆裂炎炮
+        color := GetColor(937, 943) ; 0xE5FFFF
+        if (color == 0xE5FFFF) {
+            ; ToolTip, "ok" %color%
+            Send, {2}
         } else {
-            tooltip "fuck no" color
+            ; ToolTip, "nok" %color%
         }
-        
-        ; 双龙破
-        Send "{f}"
-        Sleep 50
-        Send "{LButton}{RButton}"
-        Sleep 50
-        Send "{3}{f}"
-        ; Sleep, 50
-        ; Send, {2 4}
-        ; Sleep, 50
-        ; tooltip
+        ;; 冰龙吟回内
+        color3 := GetColor(973, 940) ; 0xE5FFFF
+        if (color3 == 0xFEFDDB) {
+            ; ToolTip, "ok" %color3%
+            Send, {3}
+        } else {
+            ; ToolTip, "nok" %color3%
+        }
+        ;; 莲花指
+        color2 := GetColor(977, 1006) ; 0xE5FFFF
+        if (color2 == 0x1D2CB6) {
+            ; ToolTip, "ok" %color2%
+            Send, {c}
+        } else {
+            ; ToolTip, "nok" %color2%
+        }
     } Until Not getkeystate("XButton2","P")
-    SetTimer tooltip -5000
-}
+; SetTimer tooltip -5000
+return
