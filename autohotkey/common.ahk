@@ -4,20 +4,38 @@
 F1::toggle := !toggle
 F1 Up::Settimer KaiGuan, % toggle=0 ? "Off" : 100
 KaiGuan:
-Send, {f}
+    Send, {f}
 return
+
+!F9::
+    ; Loop {
+    ; oordMode, Pixel, Screen
+    ; PixelGetColor, color, x, y, fast
+    MouseMove, 1692, 20, 0
+    Click
+    Sleep, 200
+    MouseMove, 1658, 46, 0
+    Sleep, 200
+    Send, {WheelDown 32}
+    Sleep, 100
+    MouseMove, 1661, 59, 0
+    Click
+    Sleep, 100
+    Send, {y}
+    ; } Until Not getkeystate("XButton2","P")
+Return
 
 GetColor(x, y)
 {
 
-    CoordMode, Pixel, Screen 
+    CoordMode, Pixel, Screen
     PixelGetColor, color, x, y, fast
 
     StringRight color, color, 10 ;
 
     return color
-
 }
+
 ; ; 按一次打开再按关闭 - 发送F键
 ; F1::toggle := !toggle
 ; F1 Up::Settimer KaiGuan, % toggle=0 ? "Off" : 50
