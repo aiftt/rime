@@ -11,19 +11,27 @@ return
     ; Loop {
     ; oordMode, Pixel, Screen
     ; PixelGetColor, color, x, y, fast
+    SwitchChannel(1661,45)
+    SwitchChannel(1661,66)
+    SwitchChannel(1661,90)
+    SwitchChannel(1661,113)
+    SwitchChannel(1661,135)
+    ; } Until Not getkeystate("XButton2","P")
+Return
+
+SwitchChannel(x, y) 
+{
     MouseMove, 1692, 20, 0
     Click
     Sleep, 200
-    MouseMove, 1658, 46, 0
-    Sleep, 200
-    Send, {WheelDown 32}
-    Sleep, 100
-    MouseMove, 1661, 59, 0
+    MouseMove, x, y, 0
     Click
     Sleep, 100
     Send, {y}
-    ; } Until Not getkeystate("XButton2","P")
-Return
+    Sleep, 100
+    Send, {WheelDown 32}
+    Sleep, 100
+}
 
 GetColor(x, y)
 {
