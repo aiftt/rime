@@ -4,38 +4,29 @@
 XButton1::toggle := !toggle
 XButton1 Up::Settimer QiGong, % toggle=0 ? "Off" : 100
 QiGong:
-    Send, {c}{LButton 8}{2}{f}
-; QigongKaDao()
+    Send, {c}{f}{LButton}{f}{2}{f}{z}{f}{RButton}{f}
+    ; QigongKaDao2()   
 return
 
 QigongKaDao2() {
-    ; 左右攒并炎玉
-    Send, {f}{LButton}
+    Send, {LButton}{RButton}
     ;; 莲花指
-    color2 := GetColor(977, 1006) ; 0xE5FFFF
-    Sleep, 30
-    if (color2 == 0x1D2CB6) {
-        ; ToolTip, "ok" %color2%
-        Send, {c}
-    } else {
-        Send, {RButton}
-    }
-    Send, {z}
-    ;; 爆裂炎炮
-    color := GetColor(937, 943) ; 0xE5FFFF
-    if (color == 0xE5FFFF) {
-        ; ToolTip, "ok" %color%
-        Send, {2}
-    } else {
-        ; ToolTip, "nok" %color%
-    }
-    ;; 冰龙吟回内
-    color3 := GetColor(973, 940) ; 0xE5FFFF
-    if (color3 == 0xFEFDDB) {
-        ; ToolTip, "ok" %color3%
-        Send, {3}
-    } else {
-        ; ToolTip, "nok" %color3%
+    ; color := GetColor(977, 1006) ; 0xE5FFFF
+    color := GetColor(968, 1004)
+    ; if (color == 0x1D2CB6) {
+    if (color != 0xFFE9A1) {
+        ; Send, {c}
     }
 
+    ; 左右2f循环 
+    Send, {f}{LButton}{f}{2}{f}{z}{f}{RButton}{f}
+
+    ; 流星指触发秘功牌
+    ; color := GetColor(1023,1006)
+    color := GetColor(1014,1000)
+    ToolTip, "%color%"
+    if (color != 0x4A9BCE) {
+        ; Send, {v}
+    }
+    
 }
