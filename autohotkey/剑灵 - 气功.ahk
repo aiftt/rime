@@ -4,8 +4,18 @@
 XButton1::toggle := !toggle
 XButton1 Up::Settimer QiGong, % toggle=0 ? "Off" : 100
 QiGong:
-    Send, {c}{f}{LButton}{f}{2}{f}{z}{f}{RButton}{f}
+    Send, {c}{2}{LButton}{f}{RButton}{f}{x}{z}{3}
+    ; Send, {f}{2}{LButton}{2}{2}{RButton}{2}{2}
     ; QigongKaDao2()   
+    
+    ; SendKeyWithColor(897, 1002, "0x4D9DDB", "z")  ; 星星之火
+    ; SendKeyWithColor(897, 1002, "0xCCCEFF", "z")  ; 破冰
+    ; SendKeyWithColor(984, 997, "0x3570B0", "c")  ; 莲花指
+    ; SendKeyWithColor(1025, 1004, "0x5FC9EF", "v")  ; 流星指
+    ; SendKeyWithColor(942, 1010, "0x9CFAFF", "x")  ; 火莲掌
+    ; SendKeyWithColor(975, 938, "0xEEC98F", "3")  ; 冰龙吟
+    ; color := GetColor(975, 938)
+    ; ToolTip, "%color%"
 return
 
 QigongKaDao2() {

@@ -2,9 +2,9 @@
 #SingleInstance Force
 
 F1::toggle := !toggle
-F1 Up::Settimer KaiGuan, % toggle=0 ? "Off" : 100
+F1 Up::Settimer KaiGuan, % toggle=0 ? "Off" : 10
 KaiGuan:
-    Send, {f}
+    Send, {5}
 return
 
 !F9::
@@ -31,6 +31,15 @@ SwitchChannel(x, y)
     Sleep, 100
     Send, {WheelDown 32}
     Sleep, 100
+}
+
+SendKeyWithColor(x, y, color1, key)
+{
+    color := GetColor(x, y)
+    if (color == color1) {
+        Send, "{%key%}"
+        ToolTip, "%color%" "%color1%" "%key%"
+    }
 }
 
 GetColor(x, y)

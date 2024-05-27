@@ -15,6 +15,7 @@ XButton2::
 ; SetTimer tooltip, -5000
 return
 
+
 XButton1::toggle := !toggle
 XButton1 Up::Settimer ZhaoHuan, % toggle=0 ? "Off" : 100
 ZhaoHuan:
