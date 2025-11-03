@@ -1,4 +1,9 @@
 patch:
+  schema_list:
+    - schema: lufs_pinyin
+    # - schema: luna_pinyin
+    - schema: hangeul2set
+    # - schema: korean
   key_binder:
     bindings:
       - accept: Control+space
